@@ -1,0 +1,461 @@
+/* CSS Reset/Normalize (using a simple reset) */
+html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea, button {
+    margin: 0;
+    padding: 0;
+    border: 0; /* Optional: Resets borders as well */
+}
+
+/* Root Variables (CSS Custom Properties) */
+:root {
+    --primary-color: #6a11cb;
+    --secondary-color: #2575fc;
+    --accent-color: #ffdd57;
+    --text-color: #333;
+    --background-color: #f4f4f9;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: 0.3s ease; /* Default transition */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition); /* Apply transition to links */
+}
+
+/* Header and Navigation */
+header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 10px 0;
+    box-shadow: var(--box-shadow);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav .logo {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: var(--transition); /* Add transition for logo hover */
+}
+
+nav .logo:hover {
+    color: var(--accent-color); /* Example hover effect */
+}
+
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    font-weight: 500;
+}
+
+nav ul li a:hover {
+    color: var(--accent-color);
+}
+
+nav ul li a.active {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Banner */
+.banner {
+    text-align: center;
+    padding: 100px 20px;
+    background: url('assets/banner.jpg') no-repeat center center/cover;
+    color: white;
+    position: relative;
+}
+
+.banner h1 {
+    font-size: 48px;
+    margin: 0;
+    animation: fadeInDown 1.5s ease;
+}
+
+.banner p {
+    font-size: 20px;
+    animation: fadeInUp 1.5s ease;
+    margin-bottom: 20px; /* Add some spacing */
+}
+
+.banner .cta-button { /* Style for call to action button */
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.banner .cta-button:hover {
+    background-color: #ffe680; /* Slightly lighter accent color */
+    color: var(--secondary-color);
+}
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Featured Courses */
+.featured-courses {
+    padding: 40px 20px;
+    text-align: center;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.featured-courses h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.course-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.course-card {
+    width: 30%;
+    margin: 10px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.course-card h3 {
+    font-size: 20px;
+    margin: 10px;
+}
+
+.course-card p {
+    font-size: 14px;
+    margin: 10px;
+    color: #777;
+}
+
+.course-card button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.course-card button:hover {
+    background: var(--secondary-color);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .course-card {
+        width: 100%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .banner h1 {
+        font-size: 36px;
+    }
+
+    .banner p {
+        font-size: 18px;
+    }
+}
+
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--background-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+/* General Styling for About Section */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f4f4f4;
+}
+
+.about-content h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: auto;
+}
+
+/* Grid Layout for About Cards */
+.about-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+/* About Box Styling */
+.about-box {
+    background-color: white;  /* Before Hover */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+.about-box i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #007bff;  /* Before Hover - Blue Icon */
+}
+
+/* Hover Effect */
+.about-box:hover {
+    background-color: #007bff;  /* Deep Blue Background */
+    color: white;  /* White Text */
+    transform: translateY(-5px);  /* Slight Lift */
+}
+
+.about-box:hover i {
+    color: white;  /* White Icon */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+
+.about-box h2 {
+    font-size: 22px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.about-box p {
+    font-size: 16px;
+    color: #555;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-box {
+        width: 90%;
+    }
+
+    .about-content h1 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.contact-form-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    width: 500px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+}
+
+.contact-form-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-form-card h2 {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+#contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: calc(100% - 10px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#contact-form textarea {
+    height: 120px;
+}
+
+#contact-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color var(--transition);
+}
+
+#contact-form button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+#success-message {
+    margin-top: 20px;
+    color: green;
+    font-weight: bold;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    margin: 0 0.5rem;
+    color: #333;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: #007bff;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: #333;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduLearn - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EduLearn</div>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="banner">
+            <h1>Learn Anytime, Anywhere</h1>
+            <p>Your gateway to knowledge and skills.</p>
+        </div>
+    </header>
+    <section class="featured-courses">
+        <h2>Featured Courses</h2>
+        <div class="course-list">
+            <div class="course-card">
+                <img src="course1.jpg" alt="Course 1">
+                <h3>Introduction to Programming</h3>
+                <p>Beginner | 10 Hours</p>
+                <button>Learn More</button>
+            </div>
+            <!-- Add more course cards -->
+        </div>
+    </section>
+
+    <section class="courses">
+        <h2>All Courses</h2>
+        <div class="filters">
+            <select id="category">
+                <option value="all">All Categories</option>
+                <option value="coding">Coding</option>
+                <option value="math">Math</option>
+            </select>
+            <select id="difficulty">
+                <option value="all">All Levels</option>
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+            </select>
+        </div>
+        <div class="course-list">
+
+            <!-- Course cards will be dynamically loaded here -->
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+    </footer>
+</body>
+</html>
