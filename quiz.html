@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLearn - Quiz</title>
+    <title>EduLearn - DSA Quiz</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,24 +13,66 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="courses.html">Courses</a></li>
+                <li><a href="quiz.html" class="active">Quiz</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="quiz">
-        <h2>Quiz</h2>
-        <div id="quiz-container">
-            <div id="question"></div>
-            <div id="options"></div>
-            <button id="submit">Submit</button>
+
+    <section class="quiz-container">
+        <h2>Data Structures & Algorithms Quiz</h2>
+        <div id="quiz-form">
+            <div class="quiz-question">
+                <p>1. What is the time complexity of binary search?</p>
+                <input type="radio" name="q1" value="O(n)"> O(n)<br>
+                <input type="radio" name="q1" value="O(log n)"> O(log n)<br>
+                <input type="radio" name="q1" value="O(n^2)"> O(n²)<br>
+                <input type="radio" name="q1" value="O(1)"> O(1)
+            </div>
+
+            <div class="quiz-question">
+                <p>2. Which data structure follows the LIFO principle?</p>
+                <input type="radio" name="q2" value="Queue"> Queue<br>
+                <input type="radio" name="q2" value="Stack"> Stack<br>
+                <input type="radio" name="q2" value="Linked List"> Linked List<br>
+                <input type="radio" name="q2" value="Tree"> Tree
+            </div>
+
+            <div class="quiz-question">
+                <p>3. Which sorting algorithm has the worst-case time complexity of O(n²)?</p>
+                <input type="radio" name="q3" value="Merge Sort"> Merge Sort<br>
+                <input type="radio" name="q3" value="Quick Sort"> Quick Sort<br>
+                <input type="radio" name="q3" value="Bubble Sort"> Bubble Sort<br>
+                <input type="radio" name="q3" value="Heap Sort"> Heap Sort
+            </div>
+
+            <div class="quiz-question">
+                <p>4. Which data structure is used for implementing recursion?</p>
+                <input type="radio" name="q4" value="Queue"> Queue<br>
+                <input type="radio" name="q4" value="Stack"> Stack<br>
+                <input type="radio" name="q4" value="Array"> Array<br>
+                <input type="radio" name="q4" value="Graph"> Graph
+            </div>
+
+            <div class="quiz-question">
+                <p>5. What is the time complexity of searching in a balanced BST?</p>
+                <input type="radio" name="q5" value="O(n)"> O(n)<br>
+                <input type="radio" name="q5" value="O(log n)"> O(log n)<br>
+                <input type="radio" name="q5" value="O(n log n)"> O(n log n)<br>
+                <input type="radio" name="q5" value="O(1)"> O(1)
+            </div>
+
+            <button id="submit-quiz">Submit Quiz</button>
+            <p id="quiz-result" style="display: none; font-weight: bold; margin-top: 10px;"></p>
         </div>
-        <div id="result"></div>
     </section>
+
     <footer>
         <p>&copy; 2024 EduLearn. All rights reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script src="quiz.js"></script>
 </body>
 </html>

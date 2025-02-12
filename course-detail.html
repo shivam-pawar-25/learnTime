@@ -3,37 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLearn - Course Detail</title>
+    <title>Course Details</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">EduLearn</div>
+            <div class="logo">LearnTime</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="course-detail">
-        <h2>Introduction to Python</h2>
-        <p><strong>Difficulty:</strong> Beginner</p>
-        <p><strong>Duration:</strong> 10 Hours</p>
-        <h3>Syllabus</h3>
-        <ul>
-            <li>Variables and Data Types</li>
-            <li>Loops and Conditionals</li>
-            <li>Functions</li>
-        </ul>
-        <h3>Resources</h3>
-        <a href="assets/python_tutorial.pdf" download>Download PDF</a>
+
+    <section class="course-content">
+        <h2 id="course-title">Course Title</h2>
+        <p id="course-description">Course Description...</p>
     </section>
+
     <footer>
         <p>&copy; 2024 EduLearn. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

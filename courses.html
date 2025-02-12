@@ -3,37 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EduLearn - Course Detail</title>
+    <title>LearnTime - Courses</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">EduLearn</div>
+            <div class="logo">LearnTime</div>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="courses.html">Courses</a></li>
+                <li><a href="courses.html" class="active">Courses</a></li>
                 <li><a href="resources.html">Resources</a></li>
                 <li><a href="about.html">About Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <section class="course-detail">
-        <h2>Introduction to Python</h2>
-        <p><strong>Difficulty:</strong> Beginner</p>
-        <p><strong>Duration:</strong> 10 Hours</p>
-        <h3>Syllabus</h3>
-        <ul>
-            <li>Variables and Data Types</li>
-            <li>Loops and Conditionals</li>
-            <li>Functions</li>
-        </ul>
-        <h3>Resources</h3>
-        <a href="assets/python_tutorial.pdf" download>Download PDF</a>
+
+    <section class="featured-courses">
+        <h2>Our Courses</h2>
+        <div class="course-list">
+
+            <div class="course-card">
+                <img src="python.jpg" alt="Python">
+                <h3>Introduction to Python</h3>
+                <p>Beginner | 10 Hours</p>
+                <button onclick="loadCourse('python')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="ai-ml.png" alt="Machine Learning">
+                <h3>Machine Learning Basics</h3>
+                <p>Intermediate | 15 Hours</p>
+                <button onclick="loadCourse('ml')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="dsa.png" alt="DSA">
+                <h3>DSA</h3>
+                <p>Intermediate | 20 Hours</p>
+                <a href="dsa-course.html"><button>Learn More</button></a>
+            </div>
+
+            <div class="course-card">
+                <img src="veb-dev.jpg" alt="Web Development">
+                <h3> Web Development</h3>
+                <p>Beginner | 25 Hours</p>
+                <button onclick="loadCourse('web')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="cyber-securiy.jpg" alt="Cyber Security">
+                <h3>Cyber Security</h3>
+                <p>Advanced | 30 Hours</p>
+                <button onclick="loadCourse('cyber')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="cloud-computing.png" alt="Cloud Computing">
+                <h3>Cloud Computing</h3>
+                <p>Intermediate | 18 Hours</p>
+                <button onclick="loadCourse('cloud')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="ai.jpg" alt="AI">
+                <h3>Artificial Intelligence</h3>
+                <p>Advanced | 22 Hours</p>
+                <button onclick="loadCourse('ai')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="block-chain.jpg" alt="Blockchain">
+                <h3>Blockchain Technology</h3>
+                <p>Intermediate | 16 Hours</p>
+                <button onclick="loadCourse('blockchain')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="computer-network.jpg" alt="Networking">
+                <h3>Computer Networking</h3>
+                <p>Beginner | 12 Hours</p>
+                <button onclick="loadCourse('networking')">Learn More</button>
+            </div>
+
+            <div class="course-card">
+                <img src="ethical-hacking.jpg" alt="Ethical Hacking">
+                <h3>Ethical Hacking</h3>
+                <p>Advanced | 28 Hours</p>
+                <button onclick="loadCourse('ethicalhacking')">Learn More</button>
+            </div>
+
+        </div>
     </section>
+
     <footer>
-        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+        <p>&copy; 2024 LearnTime. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

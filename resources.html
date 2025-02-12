@@ -19,21 +19,76 @@
             </ul>
         </nav>
     </header>
+
     <section class="resources">
-        <h2>Resources</h2>
+        <h2>Downloadable Resources</h2>
         <input type="text" id="search" placeholder="Search resources...">
-        <div class="resource-list">
+        
+        <div class="resource-list" id="resource-list">
             <div class="resource-card">
                 <h3>Math Formulas</h3>
                 <p>PDF | 5MB</p>
-                <a href="assets/math_formulas.pdf" download>Download</a>
+                <a href="resource/math_formulas.pdf" download>Download</a>
             </div>
-            <!-- Add more resources -->
+
+            <div class="resource-card">
+                <h3>Python Programming Guide</h3>
+                <p>PDF | 3MB</p>
+                <a href="resource/python_guide.pdf" download>Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Data Structures & Algorithms</h3>
+                <p>PDF | 6MB</p>
+                <a href="resource/dsa_notes.pdf" download>Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Machine Learning Handbook</h3>
+                <p>PDF | 7MB</p>
+                <a href="resource/ml_handbook.pdf" download>Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Full Stack Web Development</h3>
+                <p>PDF | 4MB</p>
+                <a href="resource/web_dev.pdf" download>Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Operating Systems Notes</h3>
+                <p>PDF | 5MB</p>
+                <a href="resource/os_notes.pdf" download>Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Networking Basics</h3>
+                <p>PDF | 4MB</p>
+                <a href="resource/networking_basics.pdf" download>Download</a>
+            </div>
+
+            <div class="resource-card">
+                <h3>Cybersecurity Essentials</h3>
+                <p>PDF | 3.5MB</p>
+                <a href="resource/cybersecurity_essentials.pdf" download>Download</a>
+            </div>
         </div>
     </section>
+
     <footer>
         <p>&copy; 2024 EduLearn. All rights reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script>
+        document.getElementById('search').addEventListener('keyup', function() {
+            let filter = this.value.toLowerCase();
+            let cards = document.querySelectorAll('.resource-card');
+
+            cards.forEach(card => {
+                let text = card.textContent.toLowerCase();
+                card.style.display = text.includes(filter) ? 'block' : 'none';
+            });
+        });
+    </script>
 </body>
 </html>

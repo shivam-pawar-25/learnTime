@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Structures & Algorithms - Course</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">EduLearn</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="courses.html">Courses</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="course-details">
+        <div class="course-container">
+            <img src="dsa.png" alt="DSA Course Image" class="course-image">
+            <h2>Data Structures & Algorithms (DSA)</h2>
+            <p><strong>Level:</strong> Intermediate</p>
+            <p><strong>Duration:</strong> 20 Hours</p>
+            <p><strong>Path:</strong> <a href="courses.html">Courses</a> > DSA</p>
+            
+            <button id="enroll-btn">Enroll Now</button>
+            <p id="success-message" style="display: none; color: green; font-weight: bold;">✅ Successfully Enrolled!</p>
+        </div>
+
+        <div class="topics-card">
+            <h4>Course Topics:</h4>
+            <ul>
+                <li>1. Introduction to DSA</li>
+                <li>2. Arrays & Strings</li>
+                <li>3. Linked Lists</li>
+                <li>4. Stacks & Queues</li>
+                <li>5. Trees & Graphs</li>
+                <li>6. Sorting & Searching Algorithms</li>
+                <li>7. Dynamic Programming</li>
+                <li>8. Greedy Algorithms</li>
+                <li>9. Hashing & Hash Tables</li>
+                <li>10. Advanced DSA Topics</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 EduLearn. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById("enroll-btn").addEventListener("click", function() {
+            document.getElementById("success-message").style.display = "block";
+        });
+    </script>
+</body>
+</html>

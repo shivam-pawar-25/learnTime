@@ -1,19 +1,17 @@
-/* CSS Reset/Normalize (using a simple reset) */
 html, body, h1, h2, h3, h4, h5, h6, p, ul, ol, li, form, input, textarea, button {
     margin: 0;
     padding: 0;
-    border: 0; /* Optional: Resets borders as well */
+    border: 0;
 }
 
-/* Root Variables (CSS Custom Properties) */
 :root {
-    --primary-color: #6a11cb;
-    --secondary-color: #2575fc;
-    --accent-color: #ffdd57;
-    --text-color: #333;
-    --background-color: #f4f4f9;
+    --primary-color: #2E8B57;
+    --secondary-color: #006400;
+    --accent-color: #ADFF2F;
+    --text-color: #2C2C2C;
+    --background-color: #F0FFF0;
     --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition: 0.3s ease; /* Default transition */
+    --transition: 0.3s ease;
 }
 
 body {
@@ -26,10 +24,9 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-    transition: var(--transition); /* Apply transition to links */
+    transition: var(--transition);
 }
 
-/* Header and Navigation */
 header {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     color: white;
@@ -50,19 +47,16 @@ nav .logo {
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
-    transition: var(--transition); /* Add transition for logo hover */
+    transition: var(--transition);
 }
 
 nav .logo:hover {
-    color: var(--accent-color); /* Example hover effect */
+    color: var(--accent-color);
 }
-
 
 nav ul {
     list-style: none;
     display: flex;
-    margin: 0;
-    padding: 0;
 }
 
 nav ul li {
@@ -83,7 +77,6 @@ nav ul li a.active {
     border-bottom: 2px solid var(--accent-color);
 }
 
-/* Banner */
 .banner {
     text-align: center;
     padding: 100px 20px;
@@ -94,32 +87,29 @@ nav ul li a.active {
 
 .banner h1 {
     font-size: 48px;
-    margin: 0;
     animation: fadeInDown 1.5s ease;
 }
 
 .banner p {
     font-size: 20px;
     animation: fadeInUp 1.5s ease;
-    margin-bottom: 20px; /* Add some spacing */
+    margin-bottom: 20px;
 }
 
-.banner .cta-button { /* Style for call to action button */
+.banner .cta-button {
     display: inline-block;
     padding: 15px 30px;
     background-color: var(--accent-color);
     color: var(--primary-color);
-    text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
     transition: var(--transition);
 }
 
 .banner .cta-button:hover {
-    background-color: #ffe680; /* Slightly lighter accent color */
+    background-color: #BFFF00;
     color: var(--secondary-color);
 }
-
 
 @keyframes fadeInDown {
     from {
@@ -143,7 +133,6 @@ nav ul li a.active {
     }
 }
 
-/* Featured Courses */
 .featured-courses {
     padding: 40px 20px;
     text-align: center;
@@ -165,18 +154,20 @@ nav ul li a.active {
 }
 
 .course-card {
-    width: 30%;
-    margin: 10px;
+    width: 250px;
     background: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: var(--box-shadow);
-    transition: transform var(--transition), box-shadow var(--transition);
+    transition: transform var(--transition), box-shadow var(--transition), background-color 0.3s ease;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 .course-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+    background-color: var(--background-color);
 }
 
 .course-card img {
@@ -187,31 +178,41 @@ nav ul li a.active {
 
 .course-card h3 {
     font-size: 20px;
-    margin: 10px;
+    margin: 15px 0 10px;
+    color: var(--primary-color);
+    transition: color var(--transition);
+}
+
+.course-card:hover h3 {
+    color: var(--secondary-color);
 }
 
 .course-card p {
     font-size: 14px;
-    margin: 10px;
     color: #777;
+    margin-bottom: 10px;
+    transition: color var(--transition);
+}
+
+.course-card:hover p {
+    color: var(--text-color);
 }
 
 .course-card button {
-    display: block;
-    width: 100%;
-    padding: 10px;
+    padding: 10px 20px;
     background: var(--primary-color);
     color: white;
     border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background var(--transition);
+    transition: background var(--transition), transform 0.2s ease;
 }
 
 .course-card button:hover {
     background: var(--secondary-color);
+    transform: scale(1.05);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 20px;
@@ -220,7 +221,6 @@ footer {
     margin-top: 40px;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .course-card {
         width: 100%;
@@ -239,6 +239,98 @@ footer {
         font-size: 18px;
     }
 }
+
+.resources {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+/* Search Bar */
+#search {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    border: 2px solid #007bff;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+/* Resource Cards */
+.resource-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 10px;
+}
+
+.resource-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    background-color: #2E8B57; /* Change background color on hover */
+    color: white; /* Change text color on hover */
+}
+
+.resource-card h3 {
+    font-size: 20px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.resource-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 10px 0;
+    transition: color 0.3s;
+}
+
+/* Change text color when hovered */
+.resource-card:hover h3,
+.resource-card:hover p {
+    color: white;
+}
+
+/* Download Button */
+.resource-card a {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #003a28;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.resource-card a:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+}
+
 
 .about {
     text-align: center;
@@ -263,27 +355,7 @@ footer {
     line-height: 1.6;
     margin-bottom: 30px;
 }
-/* General Styling for About Section */
-.about {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f4f4f4;
-}
 
-.about-content h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.about-content p {
-    font-size: 1.2rem;
-    color: #666;
-    max-width: 700px;
-    margin: auto;
-}
-
-/* Grid Layout for About Cards */
 .about-grid {
     display: flex;
     justify-content: center;
@@ -292,9 +364,8 @@ footer {
     flex-wrap: wrap;
 }
 
-/* About Box Styling */
 .about-box {
-    background-color: white;  /* Before Hover */
+    background-color: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -306,56 +377,24 @@ footer {
 .about-box i {
     font-size: 2rem;
     margin-bottom: 15px;
-    color: #007bff;  /* Before Hover - Blue Icon */
+    color: var(--primary-color);
+    transition: color var(--transition);
 }
 
-/* Hover Effect */
 .about-box:hover {
-    background-color: #007bff;  /* Deep Blue Background */
-    color: white;  /* White Text */
-    transform: translateY(-5px);  /* Slight Lift */
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
 }
 
 .about-box:hover i {
-    color: white;  /* White Icon */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .about-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-
-.about-box h2 {
-    font-size: 22px;
-    color: var(--secondary-color);
-    margin-bottom: 10px;
-}
-
-.about-box p {
-    font-size: 16px;
-    color: #555;
+    color: white;
 }
 
 @media (max-width: 768px) {
     .about-grid {
         flex-direction: column;
         align-items: center;
-    }
-
-    .about-box {
-        width: 90%;
-    }
-
-    .about-content h1 {
-        font-size: 28px;
-    }
-
-    .about-content p {
-        font-size: 16px;
     }
 }
 
@@ -375,7 +414,7 @@ footer {
     width: 500px;
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 0.5s ease 0.5s, transform 0.5s ease 0.5s;
+    transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .contact-form-card.show {
@@ -392,61 +431,37 @@ footer {
     text-align: center;
 }
 
-#contact-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-#contact-form input,
-#contact-form textarea {
-    width: calc(100% - 10px);
-    padding: 10px;
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 100%;
+    padding: 12px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--primary-color);
     border-radius: 5px;
-    box-sizing: border-box;
+    font-size: 16px;
+    transition: var(--transition);
 }
 
-#contact-form textarea {
-    height: 120px;
-}
-
-#contact-form button[type="submit"] {
+.contact-form-card button {
     background-color: var(--primary-color);
     color: white;
-    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color var(--transition);
+    transition: var(--transition);
 }
 
-#contact-form button[type="submit"]:hover {
+.contact-form-card button:hover {
     background-color: var(--secondary-color);
 }
-
 #success-message {
-    margin-top: 20px;
-    color: green;
+    margin-top: 15px;
+    color: var(--primary-color);
     font-weight: bold;
-}
-
-.social-links {
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
-}
-
-.social-links a {
-    margin: 0 0.5rem;
-    color: #333;
-    font-size: 1.5rem;
-    transition: color 0.3s;
-}
-
-.social-links a:hover {
-    color: #007bff;
+    text-align: center;
 }
 
 .contact-info {
@@ -457,5 +472,449 @@ footer {
 
 .contact-info a {
     text-decoration: none;
-    color: #333;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    margin: 0 0.5rem;
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .contact-form-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .contact-form-card h2 {
+        font-size: 20px;
+    }
+}
+
+.index-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.index-container h1 {
+    font-size: 50px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.index-container p {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.index-container .explore-btn {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.index-container .explore-btn:hover {
+    background-color: var(--secondary-color);
+}
+.featured-courses {
+    padding: 40px 20px;
+    text-align: center;
+    background: white;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+}
+
+.featured-courses h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
+
+.course-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.course-card {
+    width: 250px;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.course-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.course-card h3 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+    color: var(--primary-color);
+}
+
+.course-card p {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.course-card button {
+    padding: 10px 20px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+
+.course-card button:hover {
+    background: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .course-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.about {
+    text-align: center;
+    padding: 60px 20px;
+    background: var(--background-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-content h1 {
+    font-size: 36px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.about-content p {
+    font-size: 18px;
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.about-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.about-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+    transition: background-color 0.4s ease, color 0.4s ease, transform 0.3s ease;
+}
+
+.about-box i {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+}
+
+.about-box:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-5px);
+}
+
+.about-box:hover i {
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .about-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.contact-form-card {
+    background-color:  #ffffff;
+    border-radius: 10px;
+
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    width: 500px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.contact-form-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contact-form-card h2 {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+}
+
+.contact-form-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form-card label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 95%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid var(--primary-color);
+    border-radius: 5px;
+    font-size: 16px;
+    transition: var(--transition);
+}
+
+.contact-form-card input:focus,
+.contact-form-card textarea:focus {
+    border-color: var(--accent-color);
+    outline: none;
+    box-shadow: 0 0 10px rgba(173, 255, 47, 0.5);
+}
+
+.contact-form-card textarea {
+    resize: none;
+    height: 120px;
+}
+
+.contact-form-card button {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.contact-form-card button:hover {
+    background-color: var(--secondary-color);
+}
+
+#success-message {
+    margin-top: 15px;
+    color: var(--primary-color);
+    font-weight: bold;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: white;
+    margin-top: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-info a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    margin-bottom: 10px;
+    transition: var(--transition);
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-links a {
+    margin: 0 0.5rem;
+    color: white;
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--accent-color);
+}
+
+@media (max-width: 768px) {
+    .contact-form-card {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .contact-form-card h2 {
+        font-size: 20px;
+    }
+}
+
+
+
+.course-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.course-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.topics-card {
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.topics-card h4 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.topics-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.topics-card li {
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.topics-card li:last-child {
+    border-bottom: none;
+}
+
+.quiz-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-question {
+    padding: 10px 0;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #218838;
 }

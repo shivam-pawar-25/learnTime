@@ -5,19 +5,35 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 65); 
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const aboutBoxes = document.querySelectorAll(".about-box");
 
-    aboutBoxes.forEach(box => {
-        box.addEventListener("mouseenter", function () {
-            this.style.backgroundColor = "#2575fc"; 
-            this.style.color = "white"; 
-            this.style.transition = "background-color 0.3s ease, color 0.3s ease";
-        });
 
-        box.addEventListener("mouseleave", function () {
-            this.style.backgroundColor = "white"; 
-            this.style.color = "black"; 
-        });
-    });
+document.getElementById("submit-quiz").addEventListener("click", function() {
+    let score = 0;
+
+    const answers = {
+        q1: "O(log n",
+        q2: "Stack",
+        q3: "Bubble Sort",
+        q4: "Stack",
+        q5: "O(log n"
+    };
+
+    for (let key in answers) {
+        let selectedAnswer = document.querySelector(`input[name="${key}"]:checked`);
+        if (selectedAnswer && selectedAnswer.value === answers[key]) {
+            score++;
+        }
+    }
+
+    let resultText = `You scored ${score} out of 5.`;
+    if (score === 5) {
+        resultText += " 🎉 Excellent!";
+    } else if (score >= 3) {
+        resultText += " 😊 Good Job!";
+    } else {
+        resultText += " 😔 Try Again!";
+    }
+
+    document.getElementById("quiz-result").textContent = resultText;
+    document.getElementById("quiz-result").style.display = "block";
 });
